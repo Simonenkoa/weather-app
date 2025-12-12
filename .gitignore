@@ -3,3 +3,4 @@ __pycache__/
 cache.json
 venv/
 .idea/
+weather_history.db
