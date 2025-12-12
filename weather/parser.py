@@ -1,0 +1,8 @@
+import argparse
+
+def get_parser():
+    parser = argparse.ArgumentParser(description='Погода по городу или координатам')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--city', type=str, help='Название города (например, Москва)')
+    group.add_argument('--coords', nargs=2, metavar=('LAT', 'LON'), type=float, help='Широта и долгота (например, 55.75 37.62)')
+    return parser
