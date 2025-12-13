@@ -7,7 +7,7 @@ def main() :
     parser = get_parser()
     args = parser.parse_args()      # Разбираем аргументы из командной строки
 
-    try :
+    try :        # Обрабатываем запрос и получаем данные о погоде
         data = process_command(args)
         print(f"Температура: {data['temperature']}°C, Скорость ветра: {data['windspeed']} км/ч")
     except Exception as e :
