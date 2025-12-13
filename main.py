@@ -5,7 +5,7 @@ from weather.commands import process_command
 
 def main() :
     parser = get_parser()
-    args = parser.parse_args()
+    args = parser.parse_args()      # Разбираем аргументы из командной строки
 
     try :
         data = process_command(args)
