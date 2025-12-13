@@ -1,4 +1,5 @@
 import argparse
+# Парсер нужен, чтобы программа удобно запускалась из консоли с разными параметрами
 
 def get_parser():
     parser = argparse.ArgumentParser(description='Погода по городу или координатам')
