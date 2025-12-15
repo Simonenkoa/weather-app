@@ -1,9 +1,25 @@
+"""Модуль для обработки команд и интеграции логики.
+
+Зачем нужен: Собирает всё вместе: аргументы, кэш, API, БД.
+Обрабатывает запрос и возвращает результат.
+"""
 from .api import get_geocode, get_weather
 from .cache import get_from_cache, save_to_cache
 from .database import log_to_db
 
 
 def process_command(args):
+    """Обрабатывает аргументы и получает погоду.
+
+        Args:
+            args (argparse.Namespace): Разобранные аргументы от парсера.
+
+        Returns:
+            dict: {'temperature': float, 'windspeed': float} — данные о погоде.
+
+        Raises:
+            ConnectionError: При ошибке API.
+        """
     city_name = args.city  # может быть None, если использовали --coords
     lat, lon = None, None
 
