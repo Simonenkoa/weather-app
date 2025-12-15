@@ -1,9 +1,15 @@
+"""Главный модуль приложения.
+
+Зачем нужен: Запускает программу, обрабатывает аргументы и выводит результат.
+Использует argparse для консольного интерфейса.
+"""
 import sys
 from weather.parser import get_parser
 from weather.commands import process_command
 
 
 def main() :
+    """Основная функция запуска приложения."""
     parser = get_parser()
     args = parser.parse_args()      # Разбираем аргументы из командной строки
 
